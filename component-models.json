@@ -161,6 +161,67 @@
     ]
   },
   {
+    "id": "carousel",
+    "fields": [
+      {
+        "component": "boolean",
+        "name": "autoplay",
+        "label": "Auto-rotate",
+        "valueType": "boolean"
+      },
+      {
+        "component": "number",
+        "name": "autoplayInterval",
+        "label": "Auto-rotate Interval (seconds)",
+        "valueType": "number",
+        "value": 5
+      },
+      {
+        "component": "container",
+        "name": "slides",
+        "label": "Slides",
+        "multi": true,
+        "fields": [
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "image",
+            "label": "Image"
+          },
+          {
+            "component": "text",
+            "name": "imageAlt",
+            "label": "Alt Text",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "name": "title",
+            "label": "Heading",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "description",
+            "label": "Description",
+            "valueType": "string"
+          },
+          {
+            "component": "aem-content",
+            "name": "link",
+            "label": "Link"
+          },
+          {
+            "component": "text",
+            "name": "linkText",
+            "label": "Link Text",
+            "valueType": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "columns",
     "fields": [
       {
