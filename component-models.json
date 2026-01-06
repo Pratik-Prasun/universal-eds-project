@@ -165,59 +165,56 @@
     "fields": [
       {
         "component": "boolean",
-        "name": "autoplay",
+        "name": "auto_play",
         "label": "Auto-rotate",
         "valueType": "boolean"
       },
       {
         "component": "number",
-        "name": "autoplayInterval",
+        "name": "auto_playInterval",
         "label": "Auto-rotate Interval (seconds)",
         "valueType": "number",
         "value": 5
+      }
+    ]
+  },
+  {
+    "id": "slide",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "top_image",
+        "label": "Image"
       },
       {
-        "component": "container",
-        "name": "slides",
-        "label": "Slides",
-        "multi": true,
-        "fields": [
-          {
-            "component": "reference",
-            "valueType": "string",
-            "name": "image",
-            "label": "Image"
-          },
-          {
-            "component": "text",
-            "name": "imageAlt",
-            "label": "Alt Text",
-            "valueType": "string"
-          },
-          {
-            "component": "text",
-            "name": "title",
-            "label": "Heading",
-            "valueType": "string"
-          },
-          {
-            "component": "richtext",
-            "name": "description",
-            "label": "Description",
-            "valueType": "string"
-          },
-          {
-            "component": "aem-content",
-            "name": "link",
-            "label": "Link"
-          },
-          {
-            "component": "text",
-            "name": "linkText",
-            "label": "Link Text",
-            "valueType": "string"
-          }
-        ]
+        "component": "text",
+        "name": "top_imageAlt",
+        "label": "Alt Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "top_title",
+        "label": "Heading",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "content_description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "content_link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "content_linkText",
+        "label": "Link Text",
+        "valueType": "string"
       }
     ]
   },
