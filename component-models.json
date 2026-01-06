@@ -220,12 +220,6 @@
         "component": "aem-content",
         "name": "content_link",
         "label": "Link"
-      },
-      {
-        "component": "text",
-        "name": "content_linkText",
-        "label": "Link Text",
-        "valueType": "string"
       }
     ]
   },
