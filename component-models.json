@@ -162,7 +162,32 @@
   },
   {
     "id": "carousel",
-    "fields": []
+    "fields": [
+      {
+        "component": "select",
+        "name": "carousel_variation",
+        "label": "Variation Style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": "var-default"
+          },
+          {
+            "name": "Alternate",
+            "value": "var-alternate"
+          },
+          {
+            "name": "Cta Focus",
+            "value": "var-cta"
+          },
+          {
+            "name": "Image Only",
+            "value": "var-image"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "slide",
