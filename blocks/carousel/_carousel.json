@@ -35,21 +35,7 @@
   "models": [
     {
       "id": "carousel",
-      "fields": [
-        {
-          "component": "boolean",
-          "name": "auto_play",
-          "label": "Auto-rotate",
-          "valueType": "boolean"
-        },
-        {
-          "component": "number",
-          "name": "auto_playInterval",
-          "label": "Auto-rotate Interval (seconds)",
-          "valueType": "number",
-          "value": 5
-        }
-      ]
+      "fields": []
     },
     {
       "id": "slide",
