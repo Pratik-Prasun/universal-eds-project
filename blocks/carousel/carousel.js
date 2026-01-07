@@ -1,4 +1,7 @@
-export default function decorate(block) {
+import { loadScript } from '../../scripts/aem.js';
+
+export default async function decorate(block) {
+  // PART 1: DOM MANIPULATION (Constructing the Cards)
   const rows = [...block.children];
   const configRow = rows[0];
 
@@ -44,7 +47,7 @@ export default function decorate(block) {
       slide.innerHTML = '';
       slide.classList.add('carousel-slide');
 
-      // Variation 1: var-default (Icon + Heading inline at top, Description at bottom)
+      // Variation 1 & 4: (Icon + Heading inline at top, Description at bottom)
       if (variation === 'var-default' || variation === 'var-alternate') {
         const top = document.createElement('div');
         top.className = 'carousel-slide-top';
@@ -74,7 +77,7 @@ export default function decorate(block) {
         slide.appendChild(bottom);
       }
 
-      // Variation 2: var-cta (Heading + Icon at top, Image at bottom, Whole card clickable)
+      // Variation 2: var-cta (Heading + Icon at top, Image at bottom)
       if (variation === 'var-cta') {
         const top = document.createElement('div');
         top.className = 'carousel-slide-top';
@@ -109,7 +112,7 @@ export default function decorate(block) {
         }
       }
 
-      // Variation 3: var-image (Image only, full card)
+      // Variation 3: var-image (Image only)
       if (variation === 'var-image') {
         if (picture) {
           const wrapper = picture.closest('p') || picture;
@@ -118,4 +121,42 @@ export default function decorate(block) {
       }
     }
   });
+
+  // PART 2: SLICK CAROUSEL INITIALIZATION (The Engine)
+
+  // 1. Load jQuery (Only if not already present)
+  if (!window.jQuery) {
+    await loadScript('/scripts/jquery.min.js');
+  }
+
+  // 2. Load Slick JS
+  await loadScript('/scripts/slick.min.js');
+
+  // 3. Initialize live site setting
+  const initCarousel = () => {
+    window.jQuery(block).slick({
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1, // As requested
+      slidesToScroll: 1,
+      // Custom HTML for Arrows to match live site
+      prevArrow: '<button type="button" class="slick-prev"><span class="slick-prev-icon" aria-hidden="true"></span><span class="slick-sr-only">Previous</span></button>',
+      nextArrow: '<button type="button" class="slick-next"><span class="slick-next-icon" aria-hidden="true"></span><span class="slick-sr-only">Next</span></button>',
+      // Custom HTML for Dots to match live site
+      customPaging(slider, i) {
+        return `<button type="button"><span class="slick-dot-icon" aria-hidden="true"></span><span class="slick-sr-only">Go to slide ${i + 1}</span></button>`;
+      },
+      responsive: [
+        {
+          breakpoint: 992, // Tablet breakpoint from live code
+          settings: {
+            arrows: false, // Hides arrows on mobile/tablet
+          },
+        },
+      ],
+    });
+  };
+
+  initCarousel();
 }
