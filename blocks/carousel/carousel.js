@@ -38,7 +38,7 @@ export default function decorate(block) {
         heading = paragraphs.find((p) => !p.querySelector('picture'));
       }
 
-      let cta = bottomSection.querySelector('.button-container');
+      const cta = bottomSection.querySelector('.button-container');
       const rawLink = bottomSection.querySelector('a');
 
       slide.innerHTML = '';
