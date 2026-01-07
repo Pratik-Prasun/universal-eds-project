@@ -41,6 +41,12 @@ export default async function decorate(block) {
         heading = paragraphs.find((p) => !p.querySelector('picture'));
       }
 
+      if (heading && heading.tagName === 'P') {
+        const h4 = document.createElement('h4');
+        h4.textContent = heading.textContent;
+        heading = h4;
+      }
+
       const cta = bottomSection.querySelector('.button-container');
       const rawLink = bottomSection.querySelector('a');
 
