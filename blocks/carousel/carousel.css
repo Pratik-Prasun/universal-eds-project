@@ -141,7 +141,7 @@
   /* Layout & Width */
   width: calc(100% - 10px);
   max-width: 475px; 
-  margin: 0 5px; 
+  margin: 0 5px 10px 5px; 
   
   /* The Box Look */
   background: #fff;
@@ -164,11 +164,18 @@
   gap: 12px;
   
   /* Colors */
-  background: rgba(80, 255, 197, 0.25);
   border-bottom: 1px solid #282b3a;
   
   /* Spacing (Mobile Default) */
   padding: 0.625rem 1.25rem;
+}
+
+.carousel.var-default .carousel-slide-top{
+  background: #50ffc540;
+}
+
+.carousel.var-alternate .carousel-slide-top{
+  background: #3ee4f9;
 }
 
 /* Tablet Override (48em) */
@@ -266,5 +273,135 @@
   .carousel.var-alternate .carousel-description {
     font-size: 2rem;
     line-height: 1.25; /* Tighter line height for large text */
+  }
+}
+
+/* =========================================
+   7. SLIDER NAVIGATION (DOTS) - FINAL FIX
+   ========================================= */
+.carousel.block .slick-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0; /* Spacing handled by li margin */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+ 
+  /* Position relative to slide */
+  position: absolute;
+  bottom: -27px;
+  left: 0;
+  right: 0;
+}
+
+@media (min-width: 48em) {
+  .carousel.block .slick-dots {
+    bottom: -40px;
+  }
+}
+
+.carousel.block .slick-dots li {
+  margin: 0 0.25rem; /* Horizontal spacing between dots */
+  padding: 0;
+  /* Ensure the li itself doesn't have weird height */
+  height: 8px;
+  width: 8px;
+  display: block; 
+}
+
+/* The Dot Button (Common Styles) */
+.carousel.block .slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  
+  /* CRITICAL FIX: Kill the 12px margin causing the jump */
+  margin: 0; 
+  
+  cursor: pointer;
+  outline: none;
+  border-radius: 50%;
+  
+  /* Inactive State: White with Dark Border */
+  background: #fff;
+  border: 1px solid #232734;
+  transition: all 0.3s ease;
+}
+
+/* Active State: Teal Fill + Teal Border */
+/* Using the specific color from your screenshot: #50FFC5 */
+.carousel.var-alternate .slick-dots li.slick-active button {
+  background: #3ee4f9; 
+}
+
+.carousel.var-default .slick-dots li.slick-active button{
+ background: #50ffc5;
+}
+
+/* 8. SLIDER NAVIGATION (ARROWS)*/
+/* Default: Hide arrows on mobile (standard UX) */
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+/* Desktop: Show Arrows */
+@media (min-width: 48em) {
+  .slick-prev,
+  .slick-next {
+    display: block !important;
+    position: absolute;
+    bottom: -47px; /* Aligns with dots */
+    z-index: 1;
+    cursor: pointer;
+    
+    /* Reset Button Styles */
+    background: transparent;
+    border: none;
+    font-size: 0;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .slick-arrow.slick-prev:hover,
+  .slick-arrow.slick-prev:focus,
+  .slick-arrow.slick-next:hover,
+  .slick-arrow.slick-next:focus {
+    background-color: transparent;
+    outline: none;
+  }
+
+  /* LEFT ARROW */
+  .slick-prev {
+    left: 153px; /* Legacy pixel value */
+  }
+
+  /* RIGHT ARROW */
+  .slick-next {
+    right: 153px; /* Legacy pixel value */
+    transform: rotate(180deg); /* Legacy rotation */
+  }
+
+  /* THE ARROW ICON (Pure CSS Chevron) */
+  /* This creates the arrow shape without needing an SVG file */
+  .slick-prev::before,
+  .slick-next::before {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 7px;
+    
+    /* The Arrow Color & Thickness */
+    border-top: 1px solid #232734; 
+    border-left: 1px solid #232734;
+    
+    /* Rotate to point left (default) */
+    transform: rotate(-45deg); 
+    margin: 5px auto; /* Center inside button */
   }
 }
