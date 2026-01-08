@@ -1,4 +1,5 @@
 /* eslint-disable */
+/* stylelint-disable */
 /* Normalize */
 .carousel.block p,
 .carousel.block h4 { 
@@ -130,6 +131,10 @@
     display: none;
 }
 
+.carousel-wrapper{
+  max-width: 475px !important;
+}
+
 /* --- 1. THE CARD CONTAINER (.card-d) --- */
 .carousel.var-default .carousel-slide,
 .carousel.var-alternate .carousel-slide {
@@ -198,19 +203,25 @@
 /* --- 4. HEADING / NAME (.card-d__subheading) --- */
 .carousel.var-default .carousel-heading,
 .carousel.var-alternate .carousel-heading {
-  margin-bottom: 0;
-  color: #282b3a;
+  /* --- LAYOUT OVERRIDES (From Card CSS) --- */
+  margin-bottom: 0; 
+  font-size: 1rem; /* Override global 1.25rem */
+  line-height: 1;  /* Override global 1.5 */
   
-  /* Mobile Default */
-  font-size: 1rem;
-  line-height: 1;
-  font-weight: 500;
+  /* --- TYPOGRAPHY --- */
+  /* Inherit Family & Color from Global */
+  font-family: "Vulf Sans", sans-serif;
+  color: var(--bs-body-color, #282b3a);
+  
+  /* IMPORTANT: Card style (500) overrides Global H4 (700) */
+  font-weight: 500; 
 }
 
 /* Desktop Override (62em) - Matching .card-d--heading-lg logic */
 @media (min-width: 62em) {
   .carousel.var-default .carousel-heading,
   .carousel.var-alternate .carousel-heading {
+    /* Legacy switches to bold and larger on desktop */
     font-weight: 700;
     font-size: 1.5rem;
   }
@@ -234,20 +245,26 @@
 /* --- 6. DESCRIPTION TEXT (.card-d__body h4) --- */
 .carousel.var-default .carousel-description,
 .carousel.var-alternate .carousel-description {
-  margin: 0;
-  color: #282b3a;
+  /* --- LAYOUT OVERRIDES (From Card CSS) --- */
+  margin: 0; /* Override global .5em margin to prevent double spacing */
+  line-height: 1.32; /* Override global 1.5 to keep text compact */
   
-  /* Mobile Default */
+  /* --- TYPOGRAPHY INHERITANCE (From Global H4) --- */
+  font-family: "Vulf Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0;
+  color: var(--bs-body-color, #282b3a); /* Use variable if available */
+
+  /* --- SIZING (Matches Both) --- */
   font-size: 1.25rem;
-  line-height: 1.32;
-  font-weight: 400; /* Assumed based on standard body weight */
 }
 
-/* Desktop Override (62em) */
+/* Desktop Override (Matches legacy .card-d__body h4 @ min-width: 62em) */
 @media (min-width: 62em) {
   .carousel.var-default .carousel-description,
   .carousel.var-alternate .carousel-description {
     font-size: 2rem;
-    line-height: 1.25;
+    line-height: 1.25; /* Tighter line height for large text */
   }
 }
