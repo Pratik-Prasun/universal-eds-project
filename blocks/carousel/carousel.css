@@ -1,38 +1,37 @@
 /* eslint-disable */
 /* stylelint-disable */
-/* Normalize */
-.carousel.block p,
-.carousel.block h4 { 
-  margin: 0; 
-  padding: 0; 
-} 
 
-.carousel.block .carousel-slide { 
-  box-sizing: border-box; 
+/* Reset default spacing */
+.carousel.block p,
+.carousel.block h4 {
+    margin: 0;
+    padding: 0;
 }
 
-/* Slider */
-.slick-slider
-{
+.carousel.block .carousel-slide {
+    box-sizing: border-box;
+}
+
+/* Slick carousel base styles */
+.slick-slider {
     position: relative;
 
     display: block;
     box-sizing: border-box;
 
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
     -webkit-touch-callout: none;
     -khtml-user-select: none;
     -ms-touch-action: pan-y;
-        touch-action: pan-y;
+    touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
 }
 
-.slick-list
-{
+.slick-list {
     position: relative;
 
     display: block;
@@ -41,28 +40,24 @@
     margin: 0;
     padding: 0;
 }
-.slick-list:focus
-{
+.slick-list:focus {
     outline: none;
 }
-.slick-list.dragging
-{
+.slick-list.dragging {
     cursor: pointer;
     cursor: hand;
 }
 
 .slick-slider .slick-track,
-.slick-slider .slick-list
-{
+.slick-slider .slick-list {
     -webkit-transform: translate3d(0, 0, 0);
-       -moz-transform: translate3d(0, 0, 0);
-        -ms-transform: translate3d(0, 0, 0);
-         -o-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
-.slick-track
-{
+.slick-track {
     position: relative;
     top: 0;
     left: 0;
@@ -72,55 +67,44 @@
     margin-right: auto;
 }
 .slick-track:before,
-.slick-track:after
-{
+.slick-track:after {
     display: table;
 
-    content: '';
+    content: "";
 }
-.slick-track:after
-{
+.slick-track:after {
     clear: both;
 }
-.slick-loading .slick-track
-{
+.slick-loading .slick-track {
     visibility: hidden;
 }
 
-.slick-slide
-{
+.slick-slide {
     display: none;
     float: left;
 
     height: 100%;
     min-height: 1px;
 }
-[dir='rtl'] .slick-slide
-{
+[dir="rtl"] .slick-slide {
     float: right;
 }
-.slick-slide img
-{
+.slick-slide img {
     display: block;
 }
-.slick-slide.slick-loading img
-{
+.slick-slide.slick-loading img {
     display: none;
 }
-.slick-slide.dragging img
-{
+.slick-slide.dragging img {
     pointer-events: none;
 }
-.slick-initialized .slick-slide
-{
+.slick-initialized .slick-slide {
     display: block;
 }
-.slick-loading .slick-slide
-{
+.slick-loading .slick-slide {
     visibility: hidden;
 }
-.slick-vertical .slick-slide
-{
+.slick-vertical .slick-slide {
     display: block;
 
     height: auto;
@@ -131,277 +115,405 @@
     display: none;
 }
 
-.carousel-wrapper{
-  max-width: 475px !important;
+.carousel.block {
+  max-width: 475px; /* The new home for the width limit */
+  margin: 0 auto;   /* Centres the carousel in the wrapper */
+  display: block;   /* Ensures margins work */
 }
 
-/* --- 1. THE CARD CONTAINER (.card-d) --- */
+/* Card container for default and alternate variations */
 .carousel.var-default .carousel-slide,
 .carousel.var-alternate .carousel-slide {
-  /* Layout & Width */
-  width: calc(100% - 10px);
-  max-width: 475px; 
-  margin: 0 5px 10px 5px; 
-  
-  /* The Box Look */
-  background: #fff;
-  border: 1px solid #282b3a;
-  border-radius: 14px;
-  overflow: hidden;
-  
-  /* Reset */
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
+    /* Layout & Width */
+    width: calc(100% - 10px);
+    max-width: 475px;
+    margin: 0 5px 10px 5px;
+
+    /* The Box Look */
+    background: #fff;
+    border: 1px solid #282b3a;
+    border-radius: 14px;
+    overflow: hidden;
+
+    /* Reset */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
-/* --- 2. TOP HEADER (.card-d__top) --- */
+/* Top section with icon and heading */
 .carousel.var-default .carousel-slide-top,
 .carousel.var-alternate .carousel-slide-top {
-  /* Layout */
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  
-  /* Colors */
-  border-bottom: 1px solid #282b3a;
-  
-  /* Spacing (Mobile Default) */
-  padding: 0.625rem 1.25rem;
+    /* Layout */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    /* Colors */
+    border-bottom: 1px solid #282b3a;
+
+    /* Spacing (Mobile Default) */
+    padding: 0.625rem 1.25rem;
 }
 
-.carousel.var-default .carousel-slide-top{
-  background: #50ffc540;
+.carousel.var-default .carousel-slide-top {
+    background: #50ffc540;
 }
 
-.carousel.var-alternate .carousel-slide-top{
-  background: #3ee4f9;
+.carousel.var-alternate .carousel-slide-top {
+    background: #3ee4f9;
 }
 
-/* Tablet Override (48em) */
+/* Larger padding on tablets and up */
 @media (min-width: 48em) {
-  .carousel.var-default .carousel-slide-top,
-  .carousel.var-alternate .carousel-slide-top {
-    padding: 0.75rem 2.25rem;
-  }
+    .carousel.var-default .carousel-slide-top,
+    .carousel.var-alternate .carousel-slide-top {
+        padding: 0.75rem 2.25rem;
+    }
 }
 
-/* --- 3. ICON IMAGE (.image) --- */
+/* Small circular icon image */
 .carousel.var-default .carousel-icon img,
 .carousel.var-alternate .carousel-icon img {
-  /* Mobile Default */
-  width: 42px;
-  height: 42px;
-  object-fit: cover;
-  flex-shrink: 0;
+    /* Mobile Default */
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    flex-shrink: 0;
 
-  border-radius: 50%; /* Kept this as it matches the look */
-  border: 1px solid #282b3a; /* Kept border for definition */
+    border-radius: 50%; /* Kept this as it matches the look */
+    border: 1px solid #282b3a; /* Kept border for definition */
 }
 
-/* Tablet Override (48em) */
 @media (min-width: 48em) {
-  .carousel.var-default .carousel-icon img,
-  .carousel.var-alternate .carousel-icon img {
-    max-width: 54px;
-  }
+    .carousel.var-default .carousel-icon img,
+    .carousel.var-alternate .carousel-icon img {
+        max-width: 54px;
+    }
 }
 
-/* --- 4. HEADING / NAME (.card-d__subheading) --- */
+/* Heading text styling */
 .carousel.var-default .carousel-heading,
 .carousel.var-alternate .carousel-heading {
-  /* --- LAYOUT OVERRIDES (From Card CSS) --- */
-  margin-bottom: 0; 
-  font-size: 1rem; /* Override global 1.25rem */
-  line-height: 1;  /* Override global 1.5 */
-  
-  /* --- TYPOGRAPHY --- */
-  /* Inherit Family & Color from Global */
-  font-family: "Vulf Sans", sans-serif;
-  color: var(--bs-body-color, #282b3a);
-  
-  /* IMPORTANT: Card style (500) overrides Global H4 (700) */
-  font-weight: 500; 
+    margin-bottom: 0;
+    font-size: 1rem;
+    line-height: 1;
+    font-family: "Vulf Sans", sans-serif;
+    color: var(--bs-body-color, #282b3a);
+    font-weight: 500;
 }
 
-/* Desktop Override (62em) - Matching .card-d--heading-lg logic */
+/* Larger and bolder on desktop */
 @media (min-width: 62em) {
-  .carousel.var-default .carousel-heading,
-  .carousel.var-alternate .carousel-heading {
-    /* Legacy switches to bold and larger on desktop */
-    font-weight: 700;
-    font-size: 1.5rem;
-  }
+    .carousel.var-default .carousel-heading,
+    .carousel.var-alternate .carousel-heading {
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
 }
 
-/* --- 5. BOTTOM BODY (.card-d__content) --- */
+/* Bottom section with description */
 .carousel.var-default .carousel-slide-bottom,
 .carousel.var-alternate .carousel-slide-bottom {
-  /* Mobile Default */
-  padding: 1.625rem 1.5rem 1.25rem;
+    padding: 1.625rem 1.5rem 1.25rem;
 }
 
-/* Tablet Override (48em) */
 @media (min-width: 48em) {
-  .carousel.var-default .carousel-slide-bottom,
-  .carousel.var-alternate .carousel-slide-bottom {
-    padding: 2.25rem 3rem 1.875rem;
-  }
+    .carousel.var-default .carousel-slide-bottom,
+    .carousel.var-alternate .carousel-slide-bottom {
+        padding: 2.25rem 3rem 1.875rem;
+    }
 }
 
-/* --- 6. DESCRIPTION TEXT (.card-d__body h4) --- */
+/* Description text styling */
 .carousel.var-default .carousel-description,
 .carousel.var-alternate .carousel-description {
-  /* --- LAYOUT OVERRIDES (From Card CSS) --- */
-  margin: 0; /* Override global .5em margin to prevent double spacing */
-  line-height: 1.32; /* Override global 1.5 to keep text compact */
-  
-  /* --- TYPOGRAPHY INHERITANCE (From Global H4) --- */
-  font-family: "Vulf Sans", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: 0;
-  color: var(--bs-body-color, #282b3a); /* Use variable if available */
-
-  /* --- SIZING (Matches Both) --- */
-  font-size: 1.25rem;
+    margin: 0;
+    line-height: 1.32;
+    font-family: "Vulf Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0;
+    color: var(--bs-body-color, #282b3a);
+    font-size: 1.25rem;
 }
 
-/* Desktop Override (Matches legacy .card-d__body h4 @ min-width: 62em) */
+/* Larger text on desktop */
 @media (min-width: 62em) {
-  .carousel.var-default .carousel-description,
-  .carousel.var-alternate .carousel-description {
-    font-size: 2rem;
-    line-height: 1.25; /* Tighter line height for large text */
+    .carousel.var-default .carousel-description,
+    .carousel.var-alternate .carousel-description {
+        font-size: 2rem;
+        line-height: 1.25;
+    }
+}
+
+/* Variation 2: Image card with clickable overlay */
+
+.carousel.var-cta .carousel-slide {
+    width: calc(100% - 10px);
+    max-width: 475px;
+    margin: 0 5px 30px 5px;
+    background: #fff;
+    border: 1px solid #282b3a;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header section with heading and icon */
+.carousel.var-cta .carousel-slide-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #282b3a;
+    padding: 0.4375rem 0.4375rem 0.4375rem 0.9375rem;
+    height: 43px;
+    box-sizing: border-box;
+}
+
+/* Tablet adjustments */
+@media (min-width: 48em) and (max-width: 61.9em) {
+  .carousel.var-cta {
+    max-width: 335px; 
+    margin: 0 auto;
+  }
+
+  .carousel.var-cta .carousel-slide {
+    max-width: 100%;
+    margin: 0 5px 10px 5px;
+  }
+
+  .carousel.var-cta .carousel-slide-top {
+    height: 49px;
+    padding: 0.625rem 0.625rem 0.625rem 1.375rem;
   }
 }
 
-/* =========================================
-   7. SLIDER NAVIGATION (DOTS) - FINAL FIX
-   ========================================= */
-.carousel.block .slick-dots {
-  display: flex;
-  justify-content: center;
-  gap: 0; /* Spacing handled by li margin */
-  margin: 0;
-  padding: 0;
-  list-style: none;
- 
-  /* Position relative to slide */
-  position: absolute;
-  bottom: -27px;
-  left: 0;
-  right: 0;
+/* Desktop adjustments */
+@media (min-width: 62em) {
+  .carousel.block.var-cta {
+    max-width: 452px;
+    margin: 0 auto;
+  }
+
+  .carousel.var-cta .carousel-slide-top {
+    height: auto;
+    min-height: 58px;
+    padding: 0.625rem 0.625rem 0.625rem 1.375rem;
+  }
+
+  /* Large screen adjustments */
+  @media (min-width: 75em) {
+    .carousel.block.var-cta {
+      max-width: 485px;
+      margin: 0 auto;
+    }
+    
+    .carousel.var-cta .carousel-slide-top {
+      min-height: 58px;
+    }
+  }
+
+  .carousel.var-cta .icon-link-fixed {
+    width: 37px;
+    height: 37px;
+    background-size: 19px 19px;
+  }
+
+  .carousel.var-cta .carousel-heading {
+    font-size: 1.125rem;
+  }
+}
+
+/* Heading text */
+.carousel.var-cta .carousel-heading {
+    margin: 0 !important;
+    padding: 0;
+    color: #232734;
+    font-family: "Vulf Sans", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1;
 }
 
 @media (min-width: 48em) {
-  .carousel.block .slick-dots {
-    bottom: -40px;
-  }
+    .carousel.var-cta .carousel-heading {
+        font-size: 1.125rem;
+    }
+}
+
+/* Link icon button */
+.carousel.var-cta .icon-link-fixed {
+    display: block;
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    border: 1px solid #282b3a;
+    border-radius: 9px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.7388 4.26118C17.0572 1.57961 12.7095 1.57961 10.0279 4.26118L9.30707 4.98203C9.01418 5.27492 9.01418 5.7498 9.30707 6.04269C9.59997 6.33558 10.0748 6.33558 10.3677 6.04269L11.0886 5.32184C13.1844 3.22605 16.5823 3.22605 18.6781 5.32184C20.7739 7.41763 20.7739 10.8156 18.6781 12.9114L17.9573 13.6322C17.6644 13.9251 17.6644 14.4 17.9573 14.6929C18.2502 14.9858 18.725 14.9858 19.0179 14.6929L19.7388 13.972C22.4203 11.2905 22.4203 6.94276 19.7388 4.26118Z' fill='%23232734'/%3E%3Cpath d='M6.04269 9.30707C6.33558 9.59997 6.33558 10.0748 6.04269 10.3677L5.32184 11.0886C3.22605 13.1844 3.22605 16.5823 5.32184 18.6781C7.41763 20.7739 10.8156 20.7739 12.9114 18.6781L13.6322 17.9573C13.9251 17.6644 14.4 17.6644 14.6929 17.9573C14.9858 18.2501 14.9858 18.725 14.6929 19.0179L13.972 19.7388C11.2905 22.4203 6.94276 22.4203 4.26118 19.7388C1.57961 17.0572 1.57961 12.7095 4.26118 10.0279L4.98203 9.30707C5.27492 9.01418 5.7498 9.01418 6.04269 9.30707Z' fill='%23232734'/%3E%3Cpath d='M14.6928 9.30707C14.9857 9.59997 14.9857 10.0748 14.6928 10.3677L10.3677 14.6928C10.0748 14.9857 9.59997 14.9857 9.30707 14.6928C9.01418 14.3999 9.01418 13.9251 9.30707 13.6322L13.6322 9.30707C13.9251 9.01418 14.3999 9.01418 14.6928 9.30707Z' fill='%23232734'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px 14px;
+}
+
+@media (min-width: 62em) {
+    .carousel.var-cta .icon-link-fixed {
+        width: 37px;
+        height: 37px;
+        background-size: 18px 18px;
+    }
+}
+
+.carousel.var-cta .icon-link-fixed img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Image area */
+.carousel.var-cta .carousel-slide-bottom {
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+    display: block;
+}
+
+.carousel.var-cta .carousel-slide-bottom p,
+.carousel.var-cta .carousel-slide-bottom picture,
+.carousel.var-cta .carousel-slide-bottom img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    margin: 0;
+}
+
+/* Full card clickable overlay */
+.carousel.var-cta .card-link-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    cursor: pointer;
+    background: transparent;
+}
+
+/* Carousel navigation dots */
+.carousel.block .slick-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    bottom: -27px;
+    left: 0;
+    right: 0;
+}
+
+@media (min-width: 48em) {
+    .carousel.block .slick-dots {
+        bottom: -40px;
+    }
 }
 
 .carousel.block .slick-dots li {
-  margin: 0 0.25rem; /* Horizontal spacing between dots */
-  padding: 0;
-  /* Ensure the li itself doesn't have weird height */
-  height: 8px;
-  width: 8px;
-  display: block; 
+    margin: 0 0.25rem;
+    padding: 0;
+    height: 8px;
+    width: 8px;
+    display: block;
 }
 
-/* The Dot Button (Common Styles) */
+/* Dot button styling */
 .carousel.block .slick-dots li button {
-  font-size: 0;
-  line-height: 0;
-  display: block;
-  width: 8px;
-  height: 8px;
-  padding: 0;
-  
-  /* CRITICAL FIX: Kill the 12px margin causing the jump */
-  margin: 0; 
-  
-  cursor: pointer;
-  outline: none;
-  border-radius: 50%;
-  
-  /* Inactive State: White with Dark Border */
-  background: #fff;
-  border: 1px solid #232734;
-  transition: all 0.3s ease;
-}
-
-/* Active State: Teal Fill + Teal Border */
-/* Using the specific color from your screenshot: #50FFC5 */
-.carousel.var-alternate .slick-dots li.slick-active button {
-  background: #3ee4f9; 
-}
-
-.carousel.var-default .slick-dots li.slick-active button{
- background: #50ffc5;
-}
-
-/* 8. SLIDER NAVIGATION (ARROWS)*/
-/* Default: Hide arrows on mobile (standard UX) */
-.slick-prev,
-.slick-next {
-  display: none !important;
-}
-
-/* Desktop: Show Arrows */
-@media (min-width: 48em) {
-  .slick-prev,
-  .slick-next {
-    display: block !important;
-    position: absolute;
-    bottom: -47px; /* Aligns with dots */
-    z-index: 1;
-    cursor: pointer;
-    
-    /* Reset Button Styles */
-    background: transparent;
-    border: none;
     font-size: 0;
-    width: 20px;
-    height: 20px;
+    line-height: 0;
+    display: block;
+    width: 8px;
+    height: 8px;
     padding: 0;
     margin: 0;
-  }
 
-  .slick-arrow.slick-prev:hover,
-  .slick-arrow.slick-prev:focus,
-  .slick-arrow.slick-next:hover,
-  .slick-arrow.slick-next:focus {
-    background-color: transparent;
+    cursor: pointer;
     outline: none;
-  }
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #232734;
+    transition: all 0.3s ease;
+}
 
-  /* LEFT ARROW */
-  .slick-prev {
-    left: 153px; /* Legacy pixel value */
-  }
+/* Active dot color for alternate variation */
+.carousel.var-alternate .slick-dots li.slick-active button {
+    background: #3ee4f9;
+}
 
-  /* RIGHT ARROW */
-  .slick-next {
-    right: 153px; /* Legacy pixel value */
-    transform: rotate(180deg); /* Legacy rotation */
-  }
+.carousel.var-default .slick-dots li.slick-active button,
+.carousel.var-cta .slick-dots li.slick-active button {
+    background: #50ffc5;
+}
 
-  /* THE ARROW ICON (Pure CSS Chevron) */
-  /* This creates the arrow shape without needing an SVG file */
-  .slick-prev::before,
-  .slick-next::before {
-    content: '';
-    display: block;
-    width: 7px;
-    height: 7px;
-    
-    /* The Arrow Color & Thickness */
-    border-top: 1px solid #232734; 
-    border-left: 1px solid #232734;
-    
-    /* Rotate to point left (default) */
-    transform: rotate(-45deg); 
-    margin: 5px auto; /* Center inside button */
-  }
+/* Carousel navigation arrows */
+/* Hidden on mobile, shown on desktop */
+.slick-prev,
+.slick-next {
+    display: none !important;
+}
+
+/* Show arrows on desktop */
+@media (min-width: 48em) {
+    .slick-prev,
+    .slick-next {
+        display: block !important;
+        position: absolute;
+        bottom: -47px;
+        z-index: 1;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        font-size: 0;
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .slick-arrow.slick-prev:hover,
+    .slick-arrow.slick-prev:focus,
+    .slick-arrow.slick-next:hover,
+    .slick-arrow.slick-next:focus {
+        background-color: transparent;
+        outline: none;
+    }
+
+    /* Left arrow position */
+    .slick-prev {
+        left: 153px;
+    }
+
+    /* Right arrow position */
+    .slick-next {
+        right: 153px;
+        transform: rotate(180deg);
+    }
+
+    /* Arrow icon created with CSS borders */
+    .slick-prev::before,
+    .slick-next::before {
+        content: "";
+        display: block;
+        width: 7px;
+        height: 7px;
+        border-top: 1px solid #232734;
+        border-left: 1px solid #232734;
+        transform: rotate(-45deg);
+        margin: 5px auto;
+    }
 }
