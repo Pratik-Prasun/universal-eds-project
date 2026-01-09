@@ -116,26 +116,29 @@
 }
 
 .carousel.block {
-  max-width: 475px; /* The new home for the width limit */
-  margin: 0 auto;   /* Centres the carousel in the wrapper */
-  display: block;   /* Ensures margins work */
+  max-width: 475px;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  padding-bottom: 35px;
+}
+
+@media (min-width: 48em) {
+  .carousel.block {
+    padding-bottom: 55px;
+  }
 }
 
 /* Card container for default and alternate variations */
 .carousel.var-default .carousel-slide,
 .carousel.var-alternate .carousel-slide {
-    /* Layout & Width */
     width: calc(100% - 10px);
     max-width: 475px;
     margin: 0 5px 10px 5px;
-
-    /* The Box Look */
     background: #fff;
     border: 1px solid #282b3a;
     border-radius: 14px;
     overflow: hidden;
-
-    /* Reset */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -144,15 +147,10 @@
 /* Top section with icon and heading */
 .carousel.var-default .carousel-slide-top,
 .carousel.var-alternate .carousel-slide-top {
-    /* Layout */
     display: flex;
     align-items: center;
     gap: 12px;
-
-    /* Colors */
     border-bottom: 1px solid #282b3a;
-
-    /* Spacing (Mobile Default) */
     padding: 0.625rem 1.25rem;
 }
 
@@ -175,14 +173,12 @@
 /* Small circular icon image */
 .carousel.var-default .carousel-icon img,
 .carousel.var-alternate .carousel-icon img {
-    /* Mobile Default */
     width: 42px;
     height: 42px;
     object-fit: cover;
     flex-shrink: 0;
-
-    border-radius: 50%; /* Kept this as it matches the look */
-    border: 1px solid #282b3a; /* Kept border for definition */
+    border-radius: 50%;
+    border: 1px solid #282b3a;
 }
 
 @media (min-width: 48em) {
@@ -404,6 +400,62 @@
     background: transparent;
 }
 
+/* Variation 3: Image only */
+
+/* Slide wrapper keeps full width */
+.carousel.var-image .carousel-slide {
+  width: calc(100% - 10px);
+  max-width: 475px;
+  margin: 0 5px 10px 5px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  display: block;
+}
+
+/* Image card with border */
+.carousel.var-image .carousel-slide p {
+  display: block;
+  width: 100%;
+  max-width: 475px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #282b3a;
+  border-radius: 14px;
+  overflow: hidden;
+  padding: 0;
+  line-height: 0;
+}
+
+/* Tablet size adjustment */
+@media (min-width: 48em) and (max-width: 61.9em) {
+  .carousel.var-image .carousel-slide p {
+    max-width: 323px !important; 
+  }
+}
+
+/* Desktop size adjustment */
+@media (min-width: 62em) {
+  .carousel.var-image .carousel-slide p {
+    max-width: 442px !important;
+  }
+}
+
+/* Large screen size adjustment */
+@media (min-width: 75em) {
+  .carousel.var-image .carousel-slide p {
+    max-width: 474px !important;
+  }
+}
+
+.carousel.var-image .carousel-slide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1; 
+  object-fit: cover;
+  margin: 0;
+}
+
 /* Carousel navigation dots */
 .carousel.block .slick-dots {
     display: flex;
@@ -413,14 +465,14 @@
     padding: 0;
     list-style: none;
     position: absolute;
-    bottom: -27px;
+    bottom: 8px;
     left: 0;
     right: 0;
 }
 
 @media (min-width: 48em) {
     .carousel.block .slick-dots {
-        bottom: -40px;
+        bottom: 15px;
     }
 }
 
@@ -456,7 +508,9 @@
 }
 
 .carousel.var-default .slick-dots li.slick-active button,
-.carousel.var-cta .slick-dots li.slick-active button {
+.carousel.var-cta .slick-dots li.slick-active button,
+.carousel.var-image .slick-dots li.slick-active button 
+ {
     background: #50ffc5;
 }
 
@@ -473,7 +527,7 @@
     .slick-next {
         display: block !important;
         position: absolute;
-        bottom: -47px;
+        bottom: 8px;
         z-index: 1;
         cursor: pointer;
         background: transparent;
