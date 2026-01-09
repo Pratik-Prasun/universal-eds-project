@@ -263,15 +263,14 @@
     }
 }
 
-/* Tablet adjustments for Default and Alternate variations */
+/* Tablet: narrower container for default and alternate */
 @media (min-width: 48em) and (max-width: 61.9em) {
     .carousel.var-default,
     .carousel.var-alternate {
-        max-width: 352px; /* Match legacy width */
+        max-width: 352px;
         margin: 0 auto;
     }
 
-    /* Ensure slides fill this new narrower container */
     .carousel.var-default .carousel-slide,
     .carousel.var-alternate .carousel-slide {
         max-width: 100%;
@@ -279,7 +278,23 @@
     }
 }
 
-/* Variation 2: Image card with clickable overlay */
+/* Alternate variation: paragraph description with italic text */
+.carousel.var-alternate p.carousel-description {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgb(40, 43, 58);
+    margin-bottom: 12px;
+    letter-spacing: normal;
+}
+
+.carousel.var-alternate p.carousel-description em {
+    font-style: italic;
+    font-weight: inherit;
+}
+
+
+/* Variation 2: CTA card with image and clickable overlay */
 
 .carousel.var-cta .carousel-slide {
     width: calc(100% - 10px);
@@ -307,7 +322,6 @@
     box-sizing: border-box;
 }
 
-/* Tablet adjustments */
 @media (min-width: 48em) and (max-width: 61.9em) {
   .carousel.var-cta {
     max-width: 335px; 
@@ -325,7 +339,7 @@
   }
 }
 
-/* Desktop adjustments */
+/* Desktop and large screen sizing */
 @media (min-width: 62em) {
   .carousel.block.var-cta {
     max-width: 452px;
@@ -338,7 +352,6 @@
     padding: 0.625rem 0.625rem 0.625rem 1.375rem;
   }
 
-  /* Large screen adjustments */
   @media (min-width: 75em) {
     .carousel.block.var-cta {
       max-width: 485px;
@@ -361,7 +374,7 @@
   }
 }
 
-/* Heading text */
+/* CTA heading */
 .carousel.var-cta .carousel-heading {
     margin: 0 !important;
     padding: 0;
@@ -378,7 +391,7 @@
     }
 }
 
-/* Link icon button */
+/* Link icon */
 .carousel.var-cta .icon-link-fixed {
     display: block;
     width: 28px;
@@ -406,7 +419,7 @@
     object-fit: contain;
 }
 
-/* Image area */
+/* Image container */
 .carousel.var-cta .carousel-slide-bottom {
     padding: 0;
     margin: 0;
@@ -438,7 +451,7 @@
 
 /* Variation 3: Image only */
 
-/* Slide wrapper keeps full width */
+/* Slide container */
 .carousel.var-image .carousel-slide {
   width: calc(100% - 10px);
   max-width: 475px;
@@ -463,21 +476,18 @@
   line-height: 0;
 }
 
-/* Tablet size adjustment */
 @media (min-width: 48em) and (max-width: 61.9em) {
   .carousel.var-image .carousel-slide p {
     max-width: 323px !important; 
   }
 }
 
-/* Desktop size adjustment */
 @media (min-width: 62em) {
   .carousel.var-image .carousel-slide p {
     max-width: 442px !important;
   }
 }
 
-/* Large screen size adjustment */
 @media (min-width: 75em) {
   .carousel.var-image .carousel-slide p {
     max-width: 474px !important;
@@ -520,7 +530,6 @@
     display: block;
 }
 
-/* Dot button styling */
 .carousel.block .slick-dots li button {
     font-size: 0;
     line-height: 0;
@@ -550,14 +559,12 @@
     background: var(--carousel-accent-teal);
 }
 
-/* Carousel navigation arrows */
-/* Hidden on mobile, shown on desktop */
+/* Navigation arrows (desktop only) */
 .slick-prev,
 .slick-next {
     display: none !important;
 }
 
-/* Show arrows on desktop */
 @media (min-width: 48em) {
     .slick-prev,
     .slick-next {
@@ -583,18 +590,16 @@
         outline: none;
     }
 
-    /* Left arrow position */
     .slick-prev {
         left: 153px;
     }
 
-    /* Right arrow position */
     .slick-next {
         right: 153px;
         transform: rotate(180deg);
     }
 
-    /* Arrow icon created with CSS borders */
+    /* Arrow icons using CSS borders */
     .slick-prev::before,
     .slick-next::before {
         content: "";
