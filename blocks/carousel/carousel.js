@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable arrow-body-style */
 import { loadScript } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
@@ -138,8 +140,8 @@ export default async function decorate(block) {
   // 2. Load Slick JS
   await loadScript('/scripts/slick.min.js');
 
-  // 3. Initialize live site setting
-  const initCarousel = () => {
+  // 3. Wait for block to be laid out (fixes 0-width issue)
+  setTimeout(() => {
     window.jQuery(block).slick({
       dots: true,
       infinite: true,
@@ -162,7 +164,5 @@ export default async function decorate(block) {
         },
       ],
     });
-  };
-
-  initCarousel();
+  }, 100);
 }
