@@ -8,14 +8,28 @@
   {
     "id": "section",
     "components": [
-      "text",
-      "image",
+      "accordions",
+      "audio",
       "button",
-      "title",
-      "hero",
       "cards",
+      "carousel",
       "columns",
-      "fragment"
+      "embed",
+      "flip-cards",
+      "fragment",
+      "hero",
+      "image",
+      "scrolling-timeline",
+      "tabs",
+      "text",
+      "title",
+      "panels",
+      "slides",
+      "lottie-player",
+      "video",
+      "recaptcha-form-v2",
+      "icon-button",
+      "sovm-carousel"
     ]
   },
   {
@@ -77,6 +91,12 @@
   },
   {
     "id": "slides",
+    "components": [
+      "slide"
+    ]
+  },
+  {
+    "id": "sovm-carousel",
     "components": [
       "slide"
     ]

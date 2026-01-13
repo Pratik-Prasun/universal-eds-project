@@ -40,86 +40,6 @@
     ]
   },
   {
-    "id": "title",
-    "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "name": "titleType",
-        "label": "Title Type",
-        "options": [
-          {
-            "name": "h1",
-            "value": "h1"
-          },
-          {
-            "name": "h2",
-            "value": "h2"
-          },
-          {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "button",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link"
-      },
-      {
-        "component": "text",
-        "name": "linkText",
-        "label": "Text"
-      },
-      {
-        "component": "text",
-        "name": "linkTitle",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "name": "linkType",
-        "label": "Type",
-        "options": [
-          {
-            "name": "default",
-            "value": ""
-          },
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "section",
     "fields": [
       {
@@ -136,6 +56,14 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Background Gray",
+            "value": "bg-primary"
+          },
+          {
+            "name": "Background Green",
+            "value": "bg-secondary"
           }
         ]
       }
@@ -886,6 +814,81 @@
         "description": "Select whether to show down icon",
         "required": false,
         "value": false
+      }
+    ]
+  },
+  {
+    "id": "sovm-carousel",
+    "fields": [
+      {
+        "component": "select",
+        "name": "carousel_variation",
+        "label": "Variation Style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": "var-default"
+          },
+          {
+            "name": "Alternate",
+            "value": "var-alternate"
+          },
+          {
+            "name": "Cta Focus",
+            "value": "var-cta"
+          },
+          {
+            "name": "Image Only",
+            "value": "var-image"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "slide",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "top_image",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "name": "top_imageAlt",
+        "label": "Alt Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "top_title",
+        "label": "Heading",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "top_path",
+        "label": "Svg Path",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "top_iconName",
+        "label": "Svg Icon Name",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "content_description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "content_link",
+        "label": "Link"
       }
     ]
   },
