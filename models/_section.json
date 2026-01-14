@@ -41,6 +41,14 @@
             {
               "name": "Background Green",
               "value": "bg-secondary"
+            },
+            {
+              "name": "Split Left",
+              "value": "split-left"
+            },
+            {
+              "name": "Spilt Right",
+              "value": "split-right"
             }
           ]
         }
