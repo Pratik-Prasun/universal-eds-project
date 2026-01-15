@@ -983,7 +983,7 @@
     "id": "video-card",
     "fields": [
       {
-        "component": "reference",
+        "component": "aem-content",
         "valueType": "string",
         "name": "video",
         "label": "Video",
