@@ -980,6 +980,18 @@
     ]
   },
   {
+    "id": "video-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "video",
+        "label": "Video",
+        "multi": false
+      }
+    ]
+  },
+  {
     "id": "video",
     "fields": [
       {
