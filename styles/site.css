@@ -171,4 +171,69 @@ a:not([href], [class]):hover {
 
 /* START: 2 Col - Title, video and Button | Carousel */
 
+@media (width >= 48em) {
+    .section.split-right > div,
+    .section.split-left > div{
+        margin: 0;
+        padding: 0;
+        max-width: none;
+    }
+
+    .section.split-right {
+        position: relative;
+        width: 50%;
+        float: right;
+        min-height: 1137px;
+        box-sizing: border-box;
+        max-width: 720px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section.split-right .default-content-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    .section.split-right .default-content-wrapper p {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .section.split-right .default-content-wrapper img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .section.split-left{
+        width: 50%;
+        float: left;
+        background: #a7ffe2;
+        border: 20px solid #50ffc5;
+        box-sizing: border-box;
+        min-height: 1137px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 60px 18px;
+        max-width: 720px;
+    }
+
+    .footer-wrapper{
+        clear: both;
+    }
+}
+
 /* END: 2 Col - Title, video and Button | Carousel */
