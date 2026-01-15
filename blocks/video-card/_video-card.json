@@ -22,10 +22,8 @@
       "fields": [
         {
           "component": "aem-content",
-          "valueType": "string",
           "name": "video",
-          "label": "Video",
-          "multi": false
+          "label": "Video URL"
         }
       ]
     }
