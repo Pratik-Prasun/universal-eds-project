@@ -980,6 +980,16 @@
     ]
   },
   {
+    "id": "video-card",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "video",
+        "label": "Video URL"
+      }
+    ]
+  },
+  {
     "id": "video",
     "fields": [
       {
