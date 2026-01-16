@@ -1,13 +1,50 @@
+/* Mobile: video-card container */
 .video-card {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 322px;
+  height: 508px;
+  margin: 1.0625rem auto 0.75rem;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
+/* Mobile: video element */
 .video-card-background {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 510px;
   display: block;
+}
+
+/* Desktop: 48em+ */
+@media (min-width: 48em) {
+  .video-card {
+    margin: 2.0625rem auto;
+  }
+}
+
+/* Desktop: 62em+ */
+@media (min-width: 62em) {
+  .video-card {
+    height: 575px;
+  }
+
+  .video-card-background {
+    height: 575px;
+  }
+}
+
+/* Desktop: 75em+ */
+@media (min-width: 75em) {
+  .video-card {
+    height: 683px;
+  }
+
+  .video-card-background {
+    height: 683px;
+  }
 }
